@@ -5,11 +5,6 @@ import org.jeasy.rules.api.Rule;
 import org.jeasy.rules.api.Rules;
 import org.jeasy.rules.api.RulesEngine;
 import org.jeasy.rules.core.DefaultRulesEngine;
-import org.jeasy.rules.mvel.MVELRule;
-import org.jeasy.rules.mvel.MVELRuleFactory;
-import org.jeasy.rules.support.reader.YamlRuleDefinitionReader;
-
-import java.io.FileReader;
 
 /**
  * @author yangjl
@@ -24,15 +19,10 @@ public class Launcher {
         facts.put("person", tom);
 
         // create rules
-        Rule ageRule = new MVELRule()
-                .name("age rule")
-                .description("check if person's age is > 18 and marks the person as adult")
-                .priority(1)
-                .when("person.age > 18")
-                .then("person.setAdult(true);");
-
-        MVELRuleFactory mvelRuleFactory = new MVELRuleFactory(new YamlRuleDefinitionReader());
-        Rule alcoholRule = mvelRuleFactory.createRule(new FileReader("/Users/yangjl/local/github/easy-rules-demo/src/main/java/org/nocoder/demo/shop/alcohol-rule.yml"));
+        // create rule from class
+        Rule ageRule = AgeRule.createAgeRule();
+        // create rule from yaml
+        Rule alcoholRule = AlcoholRule.createAlcoholRule();
 
         Rules rules = new Rules();
         rules.register(ageRule);

@@ -13,12 +13,12 @@ import org.jeasy.rules.annotation.Rule;
 public class HelloWorldRule {
 
     @Condition
-    public boolean when(){
+    public boolean when() {
         return true;
     }
 
     @Action
-    public void then() throws Exception{
+    public void then() throws Exception {
         System.out.println("hello world!");
     }
 }

@@ -11,17 +11,17 @@ import org.jeasy.rules.annotation.*;
 public class BuzzRule {
 
     @Condition
-    public boolean isBuzz(@Fact("number") Integer number){
+    public boolean isBuzz(@Fact("number") Integer number) {
         return number % 7 == 0;
     }
 
     @Action
-    public void printBuzz(){
+    public void printBuzz() {
         System.out.println("buzz");
     }
 
     @Priority
-    public int getPriority(){
+    public int getPriority() {
         return 2;
     }
 }
