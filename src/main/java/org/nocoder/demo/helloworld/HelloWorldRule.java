@@ -1,4 +1,4 @@
-package org.nocoder.demo;
+package org.nocoder.demo.helloworld;
 
 import org.jeasy.rules.annotation.Action;
 import org.jeasy.rules.annotation.Condition;

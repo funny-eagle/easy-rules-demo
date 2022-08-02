@@ -1,9 +1,10 @@
-package org.nocoder.demo;
+package org.nocoder.demo.helloworld;
 
 import org.jeasy.rules.api.Facts;
 import org.jeasy.rules.api.Rules;
 import org.jeasy.rules.api.RulesEngine;
 import org.jeasy.rules.core.DefaultRulesEngine;
+import org.nocoder.demo.helloworld.HelloWorldRule;
 
 /**
  * @author yangjl
